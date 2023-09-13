@@ -12,17 +12,12 @@ This allows you to easily create summaries of code or documentation.
 
 1. Add the following line to your `init.vim` or `init.lua` to install the plugin.
 
-```vim
-" For vim-plug
-Plug 'ouchi2501/code-explain'
-```
-
 ```lua
 -- For packer.nvim
 use 'ouchi2501/code-explain'
 ```
 
-2. Open Neovim and run `:PlugInstall` or `:PackerInstall` to install the plugin.
+2. Open Neovim and run or `:PackerInstall` to install the plugin.
 
 3. Set your API key in `~/.config/nvim/lua/chat_gpt_summary.lua`.
 
