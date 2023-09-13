@@ -19,17 +19,28 @@ use 'ouchi2501/code-explain'
 
 2. Open Neovim and run or `:PackerInstall` to install the plugin.
 
-3. Set your API key in `~/.config/nvim/lua/chat_gpt_summary.lua`.
+3. Set your API key and Language.
 
 ```lua
-local api_key = "your_api_key_here"
+require("code-explain").setup({token = 'your_api_key',language = 'English'}) -- or Japanese
+```
+4. Set your keymap.
+
+```lua
+vim.api.nvim_set_keymap('v', '<leader>a', ':lua require("code-explain").print_summary()<CR>', {noremap = true, silent = true})
 ```
 
 ## Usage
 
-1. In Neovim, select the text you want to summarize.
-2. Run `:lua require('chat_gpt_summary').print_summary("en", "your_api_key")`, setting the language code and API key appropriately.
-3. The summary will be displayed in a new window.
+To use the `code-explain` plugin, follow these steps:
+
+1. In Neovim, enter Visual mode by pressing `v`, `V`, or `<C-v>`.
+2. Select the text you want to send to the API.
+3. Press `<leader>s` to send the selected text to the API. The result will be displayed in a new window.
+
+Note: If you want to use a different key mapping, replace `<leader>s` in the `init.vim` configuration with your preferred key combination.
+If you have any issues or need further assistance, feel free to ask.
+
 
 ## Supported Languages
 
