@@ -3,7 +3,7 @@
 This plugin sends selected text to the OpenAI API and retrieves a summary, which is then displayed in a new Neovim window.  
 This allows you to easily create summaries of code or documentation.
 
-https://github.com/ouchi2501/code-explain/assets/11391317/471b3f89-ad64-4238-9b0d-8a3d6575a0d6
+https://github.com/ouchi2501/code-explain/assets/11391317/57d8c7a5-a819-4b70-8520-83422ff56d33
 
 ## Prerequisites
 
