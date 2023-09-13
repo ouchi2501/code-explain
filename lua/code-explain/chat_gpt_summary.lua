@@ -1,5 +1,5 @@
 local api = vim.api
-local http_request_with_curl = require("http_request_with_curl")
+local http_request_with_curl = require("code-explain.http_request_with_curl")
 
 local config = {
     token = '',
