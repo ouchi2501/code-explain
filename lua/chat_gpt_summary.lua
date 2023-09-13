@@ -70,11 +70,16 @@ local function print_summary(language, api_key)
             table.insert(answerLines, str)
         end
         vim.schedule(function()
-            -- split window to the right
-            api.nvim_command("rightbelow vnew")
+            -- split window to the right with 1/3 width of the screen
+            vim.cmd("rightbelow vnew")
+            vim.cmd("vertical resize " .. math.floor(vim.o.columns * 1/3))
             local new_bufnr = api.nvim_get_current_buf()
             api.nvim_buf_set_lines(new_bufnr, 0, -1, false, answerLines)
+
+            -- Close the window when pressing 'q'
+            vim.api.nvim_buf_set_keymap(new_bufnr, 'n', 'q', '<cmd>bd! <CR>', {noremap = true, silent = true})
         end)
+
     end
 
     get_summary(selected_code, language, api_key, handle_response)
