@@ -70,10 +70,10 @@ local function print_summary(language, api_key)
             table.insert(answerLines, str)
         end
         vim.schedule(function()
-            -- ウィンドウを右側に作成
-            api.nvim_command("rightbelow vnew") -- 垂直分割の新しいウィンドウを右側に作成
+            -- split window to the right
+            api.nvim_command("rightbelow vnew")
             local new_bufnr = api.nvim_get_current_buf()
-            api.nvim_buf_set_lines(new_bufnr, 0, -1, false, answerLines) -- 要約を新しいウィンドウに追加
+            api.nvim_buf_set_lines(new_bufnr, 0, -1, false, answerLines)
         end)
     end
 
