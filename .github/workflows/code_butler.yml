@@ -10,7 +10,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Run Code Butler
-      uses: ouchi2501/code-butler@v1
+      uses: reviewdog/action-reviewdog@v1
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        command: review
+        github_token: ${{ '{{' }} secrets.GITHUB_TOKEN {{ '}}' }}
+        reporter: github-pr-review # Change as necessary to match how 'review' is expected to be handled
+        tool: 'eslint' # or any other linter that's required
